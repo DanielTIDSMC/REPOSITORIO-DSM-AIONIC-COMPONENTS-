@@ -1,33 +1,70 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>login</ion-title>
+    <ion-title class="ion-text-center" style="font-size: 1.5rem; color: #fff;">
+      Inicio de Sesión
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
-    <ion-toolbar> 
-      <ion-title size="large">login</ion-title>
+    <ion-toolbar>
+      <ion-title size="large">Inicio de Sesión</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <ion-item>
-    <ion-input  [(ngModel)]="email" >
-      <div label="Correo Electronico">
-         <ion-text color="danger">(Obligatorio)</ion-text>
-        </div>
-    </ion-input>
-  </ion-item>
-  
-  <ion-item>
-    <ion-input [(ngModel)]="password" label="Contraseña" type="password" value="password">
+  <div class="login-container">
 
-    </ion-input>
-  </ion-item>
+    <form #formularioLogin="ngForm" (ngSubmit)="login(formularioLogin)">
 
-  <br>
+    <ion-item lines="none">
+      <ion-input
+        labelPlacement="floating"
+        placeholder="Ingresa tu correo"
+        type="email"
+        name="email"
+        [(ngModel)]="email"
+        required
+      >
+        <div slot="label">Correo Electrónico <ion-text color="danger">(Obligatorio)</ion-text></div>
+      </ion-input>
+    </ion-item>
 
-  <ion-button  (click) = "login()" expand="block">
-    Ingresar
-  </ion-button>
+    <ion-item lines="none">
+      <ion-input
+        labelPlacement="floating"
+        placeholder="Ingresa tu contraseña"
+        type="password"
+        name="password"
+        [(ngModel)]="password"
+      >
+        <div slot="label">Contraseña</div>
+      </ion-input>
+    </ion-item>
+
+    <ion-button color="danger" expand="block" type="submit">
+      Ingresar
+    </ion-button>
+  </form>
+  </div>
 </ion-content>
+
+<style>
+  .login-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  ion-item {
+    --background: transparent;
+    --padding-start: 0;
+  }
+
+  ion-button {
+    margin-top: 1rem;
+  }
+</style>
