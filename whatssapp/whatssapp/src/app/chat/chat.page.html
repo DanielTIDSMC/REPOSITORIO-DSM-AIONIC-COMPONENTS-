@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="secondary">
+      <ion-button>
+        <ion-icon slot="icon-only" name="person-circle"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button>
+        <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Chat App</ion-title>
+  </ion-toolbar>
+</ion-header>
+//como utilizar la herramienta NgFor
+//crear otra pagina que se llame fotosgram
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <app-item-chat
+      username="Alfredo"
+      message="Bienvenido al curso de DMM"
+      date="13:44"
+      avatarUrl="https://ionicframework.com/docs/img/demos/avatar.svg"
+    ></app-item-chat>
+  </ion-list>
+</ion-content>

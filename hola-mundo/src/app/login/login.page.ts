@@ -27,7 +27,7 @@ export class LoginPage implements OnInit {
 
     // Obtener los valores del formulario
     console.log(formulario.value);
-
++
     // Validar formulario
     console.log('fomr', formulario.value);
     

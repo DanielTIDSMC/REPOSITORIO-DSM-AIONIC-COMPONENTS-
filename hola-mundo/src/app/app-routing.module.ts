@@ -35,6 +35,10 @@ const routes: Routes = [
     path: 'base',
     loadChildren: () => import('./base/base.module').then( m => m.BasePageModule)
   },
+  {
+    path: 'register',
+    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+  },
   // Elimina las rutas a módulos inexistentes.
 ];
 
